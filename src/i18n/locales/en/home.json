@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "eyebrow": "New Collection 2026",
+    "titleStart": "Discover Modern",
+    "titleHighlight": "Shopping",
+    "description": "Premium products with clean design, secure payments, and a smooth shopping experience built for everyone.",
+    "shopNow": "Shop Now",
+    "myOrders": "My Orders",
+    "securePayment": "Secure Payment",
+    "stripeProtected": "Stripe protected",
+    "fastDelivery": "Fast Delivery",
+    "reliableShipping": "Reliable shipping"
+  },
+  "newArrivals": {
+    "eyebrow": "New Arrivals",
+    "title": "Latest Products",
+    "loading": "Loading products...",
+    "empty": "No new products found."
+  },
+  "featured": {
+    "eyebrow": "Featured Products",
+    "loading": "Loading products...",
+    "empty": "No featured products found."
+  },
+  "trustBadges": {
+    "freeShipping": {
+      "title": "Free Shipping",
+      "description": "Free shipping on all orders over $100."
+    },
+    "securePayment": {
+      "title": "Secure Payment",
+      "description": "Your payment information is processed securely."
+    },
+    "easyReturns": {
+      "title": "Easy Returns",
+      "description": "Hassle-free returns within 30 days."
+    }
+  },
+  "categories": {
+    "eyebrow": "Shop by Category",
+    "title": "Explore Categories",
+    "shopNow": "Shop Now",
+    "loading": "Loading categories..."
+  }
+}

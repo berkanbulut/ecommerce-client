@@ -1,0 +1,35 @@
+.badge-paid {
+  background: rgba(34, 197, 94, 0.18);
+  color: #22c55e;
+}
+
+.badge-pending {
+  background: rgba(245, 158, 11, 0.18);
+  color: #f59e0b;
+}
+
+.badge-processing {
+  background: rgba(59, 130, 246, 0.18);
+  color: #3b82f6;
+}
+
+.badge-failed {
+  background: rgba(239, 68, 68, 0.18);
+  color: #ef4444;
+}
+
+.badge-cancelled {
+  background: rgba(239, 68, 68, 0.18);
+  color: #ef4444;
+}
+
+.badge-delivered {
+  background: rgba(16, 185, 129, 0.18);
+  color: #10b981;
+}
+
+.badge {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+}

@@ -1,0 +1,14 @@
+{
+  "home": "Hjem",
+  "shop": "Butikk",
+  "orders": "Bestillinger",
+  "admin": "Admin",
+  "editor": "Redaktør",
+  "login": "Logg inn",
+  "logout": "Logg ut",
+  "register": "Registrer",
+  "language": "Språk",
+  "toggleTheme": "Bytt tema",
+  "footerDescription": "Moderne handleopplevelse for alle.",
+  "allRightsReserved": "Alle rettigheter reservert."
+}

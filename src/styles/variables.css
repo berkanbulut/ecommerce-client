@@ -1,0 +1,37 @@
+:root {
+  --app-bg: #f6f8fb;
+  --app-text: #0f172a;
+  --app-muted: #64748b;
+
+  --app-primary: #2563eb;
+  --app-primary-hover: #1d4ed8;
+
+  --app-border: rgba(255, 255, 255, 0.55);
+
+  --glass-bg: rgba(255, 255, 255, 0.42);
+  --glass-bg-strong: rgba(255, 255, 255, 0.62);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --glass-shadow: 0 24px 80px rgba(15, 23, 42, 0.14);
+
+  --app-radius-md: 18px;
+  --app-radius-lg: 28px;
+  --app-radius-xl: 34px;
+
+  --app-transition: 0.25s ease;
+}
+
+[data-theme="dark"] {
+  --app-bg: #050816;
+  --app-text: #f8fafc;
+  --app-muted: #b6c2d4;
+
+  --app-primary: #60a5fa;
+  --app-primary-hover: #3b82f6;
+
+  --app-border: rgba(255, 255, 255, 0.12);
+
+  --glass-bg: rgba(15, 23, 42, 0.38);
+  --glass-bg-strong: rgba(15, 23, 42, 0.58);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-shadow: 0 28px 90px rgba(0, 0, 0, 0.55);
+}

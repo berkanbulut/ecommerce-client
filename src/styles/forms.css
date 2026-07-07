@@ -1,0 +1,43 @@
+.form-control,
+.form-select,
+textarea {
+  background-color: var(--app-input) !important;
+  color: var(--app-text) !important;
+  border: 1px solid var(--app-border) !important;
+  border-radius: var(--app-radius-md) !important;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+  border-color: var(--app-primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.2) !important;
+}
+
+.form-control::placeholder {
+  color: var(--app-muted) !important;
+}
+
+.form-check-input {
+  background-color: transparent !important;
+  border-color: var(--app-border) !important;
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: var(--app-primary) !important;
+  border-color: var(--app-primary) !important;
+}
+
+.form-check-label {
+  color: var(--app-text) !important;
+  cursor: pointer;
+}
+
+.form-range::-webkit-slider-thumb {
+  background: var(--app-primary);
+}
+
+.form-range::-moz-range-thumb {
+  background: var(--app-primary);
+}

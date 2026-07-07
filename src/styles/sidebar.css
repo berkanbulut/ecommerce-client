@@ -1,0 +1,39 @@
+.shop-sidebar {
+  position: sticky;
+  top: 96px;
+}
+
+.shop-filter-section h5 {
+  color: var(--app-text) !important;
+}
+
+.shop-filter-divider {
+  height: 1px;
+  background: var(--app-border);
+  margin: 1.5rem 0;
+}
+
+.shop-filter-option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--app-radius-md);
+  cursor: pointer;
+  transition:
+    background var(--app-transition),
+    transform var(--app-transition);
+}
+
+.shop-filter-option:hover {
+  background: rgba(59, 130, 246, 0.12);
+  transform: translateX(3px);
+}
+
+.shop-filter-option .form-check-input {
+  margin: 0;
+}
+
+.shop-filter-option .form-check-label {
+  color: var(--app-text) !important;
+}

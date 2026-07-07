@@ -1,0 +1,10 @@
+{
+  "required": "This field is required.",
+  "email": "Please enter a valid email address.",
+  "password": "Password is required.",
+  "passwordMin": "Password must be at least 8 characters.",
+  "username": "Username is required.",
+  "phone": "Phone number is required.",
+  "quantity": "Quantity is required.",
+  "invalidCredentials": "Invalid username or password."
+}

@@ -1,0 +1,54 @@
+.glass-card,
+.glass-panel,
+.card,
+.table-responsive,
+.shop-sidebar {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(28px) saturate(170%);
+  -webkit-backdrop-filter: blur(28px) saturate(170%);
+  border-radius: var(--app-radius-lg) !important;
+}
+
+.glass-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin: 14px 24px 0;
+  border-radius: 24px;
+  background: var(--glass-bg-strong) !important;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+}
+
+.card,
+.product-card {
+  overflow: hidden;
+}
+
+.product-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.03)
+    ),
+    var(--glass-bg) !important;
+}
+
+.product-card:hover,
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.35);
+}
+
+.bg-light {
+  background: transparent !important;
+}
+
+.border-top {
+  border-color: var(--glass-border) !important;
+}

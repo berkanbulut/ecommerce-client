@@ -1,0 +1,9 @@
+{
+  "unexpected": "Noe gikk galt.",
+  "network": "Nettverksfeil.",
+  "unauthorized": "Ikke autorisert.",
+  "forbidden": "Tilgang nektet.",
+  "notFound": "Ressursen ble ikke funnet.",
+  "server": "Intern serverfeil.",
+  "timeout": "Forespørselen tidsavbrøt."
+}

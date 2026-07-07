@@ -1,0 +1,9 @@
+{
+  "unexpected": "Something went wrong.",
+  "network": "Network error.",
+  "unauthorized": "Unauthorized.",
+  "forbidden": "Access denied.",
+  "notFound": "Resource not found.",
+  "server": "Internal server error.",
+  "timeout": "Request timed out."
+}

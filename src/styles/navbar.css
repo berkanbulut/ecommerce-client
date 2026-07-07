@@ -1,0 +1,223 @@
+.app-navbar {
+  min-height: 72px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.app-navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--app-text) !important;
+  font-weight: 800;
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+
+.app-logo-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(96, 165, 250, 0.45),
+    rgba(124, 58, 237, 0.35)
+  );
+
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.28);
+
+  color: #ffffff;
+}
+
+.app-navbar-links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.app-nav-link {
+  position: relative;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+
+  color: var(--app-muted) !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  transition:
+    color var(--app-transition),
+    background var(--app-transition),
+    transform var(--app-transition);
+}
+
+.app-nav-link:hover {
+  color: var(--app-text) !important;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.app-nav-link.active {
+  color: var(--app-text) !important;
+  background: rgba(96, 165, 250, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.22);
+}
+
+.app-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.app-icon-button {
+  width: 42px;
+  height: 42px;
+  border-radius: 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--app-text) !important;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+
+  transition:
+    transform var(--app-transition),
+    background var(--app-transition),
+    box-shadow var(--app-transition);
+}
+
+.app-icon-button:hover {
+  transform: translateY(-2px);
+  background: rgba(96, 165, 250, 0.18);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.22);
+}
+
+.app-cart-badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+
+  min-width: 20px;
+  height: 20px;
+  padding: 0 0.35rem;
+
+  border-radius: 999px;
+  background: #ef4444;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+  border: 2px solid var(--app-bg);
+}
+
+.app-user-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  padding: 0.35rem 0.45rem 0.35rem 0.35rem;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+}
+
+.app-user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, var(--app-primary), #7c3aed);
+  color: #ffffff;
+
+  font-weight: 800;
+}
+
+.app-user-name {
+  color: var(--app-text);
+  font-weight: 600;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-logout-button {
+  border: none;
+  background: transparent;
+  color: var(--app-muted);
+  font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  transition:
+    color var(--app-transition),
+    background var(--app-transition);
+}
+
+.app-logout-button:hover {
+  color: var(--app-text);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.app-auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.dropdown-menu.glass-card {
+  padding: 0.45rem;
+  overflow: hidden;
+  min-width: 160px;
+  background: var(--glass-bg-strong) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 22px !important;
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+}
+
+.dropdown-item {
+  color: var(--app-text) !important;
+  border-radius: 14px;
+  padding: 0.65rem 0.85rem;
+  font-weight: 600;
+  background: transparent !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: var(--app-text) !important;
+  background: rgba(96, 165, 250, 0.16) !important;
+}
+
+[data-theme="dark"] .dropdown-item {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .dropdown-item:hover,
+[data-theme="dark"] .dropdown-item:focus {
+  background: rgba(96, 165, 250, 0.22) !important;
+}

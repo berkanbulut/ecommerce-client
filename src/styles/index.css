@@ -1,0 +1,21 @@
+@import "./variables.css";
+@import "./reset.css";
+@import "./typography.css";
+
+@import "./glass.css";
+@import "./animations.css";
+
+@import "./buttons.css";
+@import "./cards.css";
+@import "./forms.css";
+@import "./navbar.css";
+@import "./footer.css";
+@import "./sidebar.css";
+@import "./tables.css";
+@import "./badges.css";
+
+@import "./scrollbar.css";
+@import "./utilities.css";
+@import "./responsive.css";
+@import "./hero.css";
+@import "./product-detail.css";

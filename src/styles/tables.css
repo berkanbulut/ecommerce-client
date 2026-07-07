@@ -1,0 +1,24 @@
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--app-text);
+  --bs-table-border-color: var(--app-border);
+
+  color: var(--app-text);
+}
+
+.table thead th {
+  color: var(--app-text);
+  font-weight: 700;
+}
+
+.table tbody tr {
+  transition: background var(--app-transition);
+}
+
+.table tbody tr:hover {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.table-responsive {
+  border-radius: var(--app-radius-lg);
+}

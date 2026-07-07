@@ -1,0 +1,11 @@
+{
+  "loginSuccess": "Innlogging vellykket.",
+  "logoutSuccess": "Utlogging vellykket.",
+  "registerSuccess": "Registrering fullført.",
+  "productAdded": "Produkt lagt i handlekurven.",
+  "productRemoved": "Produkt fjernet fra handlekurven.",
+  "cartUpdated": "Handlekurven er oppdatert.",
+  "orderCreated": "Bestillingen ble opprettet.",
+  "paymentSuccess": "Betalingen ble fullført.",
+  "paymentCancelled": "Betalingen ble avbrutt."
+}

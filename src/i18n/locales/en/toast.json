@@ -1,0 +1,11 @@
+{
+  "loginSuccess": "Login successful.",
+  "logoutSuccess": "Logout successful.",
+  "registerSuccess": "Registration successful.",
+  "productAdded": "Product added to cart.",
+  "productRemoved": "Product removed from cart.",
+  "cartUpdated": "Cart updated.",
+  "orderCreated": "Order created successfully.",
+  "paymentSuccess": "Payment completed successfully.",
+  "paymentCancelled": "Payment cancelled."
+}

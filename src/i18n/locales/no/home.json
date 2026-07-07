@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "eyebrow": "Ny kolleksjon 2026",
+    "titleStart": "Oppdag moderne",
+    "titleHighlight": "shopping",
+    "description": "Premiumprodukter med rent design, sikre betalinger og en smidig handleopplevelse for alle.",
+    "shopNow": "Handle nå",
+    "myOrders": "Mine bestillinger",
+    "securePayment": "Sikker betaling",
+    "stripeProtected": "Beskyttet av Stripe",
+    "fastDelivery": "Rask levering",
+    "reliableShipping": "Pålitelig frakt"
+  },
+  "newArrivals": {
+    "eyebrow": "Nyheter",
+    "title": "Nyeste produkter",
+    "loading": "Laster produkter...",
+    "empty": "Ingen nye produkter funnet."
+  },
+  "featured": {
+    "eyebrow": "Utvalgte produkter",
+    "loading": "Laster produkter...",
+    "empty": "Ingen utvalgte produkter funnet."
+  },
+  "trustBadges": {
+    "freeShipping": {
+      "title": "Gratis frakt",
+      "description": "Gratis frakt på alle bestillinger over $100."
+    },
+    "securePayment": {
+      "title": "Sikker betaling",
+      "description": "Betalingsinformasjonen din behandles sikkert."
+    },
+    "easyReturns": {
+      "title": "Enkle returer",
+      "description": "Problemfrie returer innen 30 dager."
+    }
+  },
+  "categories": {
+    "eyebrow": "Handle etter kategori",
+    "title": "Utforsk kategorier",
+    "shopNow": "Handle nå",
+    "loading": "Laster kategorier..."
+  }
+}

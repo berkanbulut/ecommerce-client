@@ -1,0 +1,28 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--app-text);
+  letter-spacing: -0.03em;
+}
+
+p {
+  color: var(--app-text);
+}
+
+.text-muted {
+  color: var(--app-muted) !important;
+}
+
+.section-title {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--app-primary), #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

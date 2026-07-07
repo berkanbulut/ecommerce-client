@@ -1,0 +1,10 @@
+{
+  "required": "Dette feltet er obligatorisk.",
+  "email": "Vennligst skriv inn en gyldig e-postadresse.",
+  "password": "Passord er påkrevd.",
+  "passwordMin": "Passordet må være minst 8 tegn.",
+  "username": "Brukernavn er påkrevd.",
+  "phone": "Telefonnummer er påkrevd.",
+  "quantity": "Antall er påkrevd.",
+  "invalidCredentials": "Ugyldig brukernavn eller passord."
+}

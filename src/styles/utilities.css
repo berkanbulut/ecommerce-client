@@ -1,0 +1,35 @@
+.shadow-soft {
+  box-shadow: var(--app-shadow);
+}
+
+.shadow-large {
+  box-shadow: var(--app-shadow-lg);
+}
+
+.rounded-xl {
+  border-radius: var(--app-radius-xl);
+}
+
+.rounded-lg {
+  border-radius: var(--app-radius-lg);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.transition {
+  transition: all var(--app-transition);
+}
+
+.border-soft {
+  border: 1px solid var(--app-border);
+}
+
+.bg-surface {
+  background: var(--app-surface);
+}
+
+.text-primary-custom {
+  color: var(--app-primary);
+}

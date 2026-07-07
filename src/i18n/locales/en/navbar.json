@@ -1,0 +1,14 @@
+{
+  "home": "Home",
+  "shop": "Shop",
+  "orders": "Orders",
+  "admin": "Admin",
+  "editor": "Editor",
+  "login": "Login",
+  "logout": "Logout",
+  "register": "Register",
+  "language": "Language",
+  "toggleTheme": "Toggle theme",
+  "footerDescription": "Modern shopping experience for everyone.",
+  "allRightsReserved": "All rights reserved."
+}
