@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Navigate, useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import type { AppDispatch, RootState } from "../../../app/api/store";
 import { handleGetMyOrderById } from "../shared/order/orderSlice";
@@ -9,6 +10,7 @@ function OrderDetailPage() {
   const { id } = useParams();
 
   const dispatch = useDispatch<AppDispatch>();
+  const { t } = useTranslation("orders");
 
   const { accessToken } = useSelector((state: RootState) => state.auth);
 
@@ -29,7 +31,7 @@ function OrderDetailPage() {
   if (isLoading) {
     return (
       <div className="container py-5">
-        <p>Loading order...</p>
+        <p>{t("detail.loading")}</p>
       </div>
     );
   }
@@ -45,7 +47,7 @@ function OrderDetailPage() {
   if (!selectedOrder) {
     return (
       <div className="container py-5">
-        <h3>Order not found.</h3>
+        <h3>{t("detail.notFound")}</h3>
       </div>
     );
   }
@@ -55,14 +57,15 @@ function OrderDetailPage() {
       <div className="container">
         <div className="mb-4 d-flex justify-content-between align-items-center">
           <div>
-            <h1 className="fw-bold">Order Details</h1>
+            <h1 className="fw-bold">{t("detail.title")}</h1>
+
             <p className="text-muted mb-0">
-              Order No: {selectedOrder.orderNumber}
+              {t("detail.orderNumber")}: {selectedOrder.orderNumber}
             </p>
           </div>
 
           <Link to="/orders" className="btn btn-outline-dark">
-            Back to Orders
+            {t("detail.backToOrders")}
           </Link>
         </div>
 
@@ -70,7 +73,7 @@ function OrderDetailPage() {
           <div className="col-lg-8">
             <div className="card border-0 shadow-sm mb-4">
               <div className="card-body">
-                <h4 className="fw-bold mb-4">Items</h4>
+                <h4 className="fw-bold mb-4">{t("detail.items")}</h4>
 
                 {selectedOrder.items.map((item) => (
                   <div
@@ -87,8 +90,9 @@ function OrderDetailPage() {
 
                     <div className="col-md-5">
                       <h6 className="fw-bold mb-1">{item.productName}</h6>
+
                       <p className="text-muted mb-0">
-                        Quantity: {item.quantity}
+                        {t("detail.quantity")}: {item.quantity}
                       </p>
                     </div>
 
@@ -106,30 +110,35 @@ function OrderDetailPage() {
 
             <div className="card border-0 shadow-sm">
               <div className="card-body">
-                <h4 className="fw-bold mb-4">Shipping Address</h4>
+                <h4 className="fw-bold mb-4">{t("detail.shippingAddress")}</h4>
 
                 <p className="mb-2">
-                  <strong>Name:</strong> {selectedOrder.shippingFullName}
+                  <strong>{t("detail.name")}:</strong>{" "}
+                  {selectedOrder.shippingFullName}
                 </p>
 
                 <p className="mb-2">
-                  <strong>Phone:</strong> {selectedOrder.shippingPhone}
+                  <strong>{t("detail.phone")}:</strong>{" "}
+                  {selectedOrder.shippingPhone}
                 </p>
 
                 <p className="mb-2">
-                  <strong>Address:</strong> {selectedOrder.shippingAddressLine}
+                  <strong>{t("detail.address")}:</strong>{" "}
+                  {selectedOrder.shippingAddressLine}
                 </p>
 
                 <p className="mb-2">
-                  <strong>City:</strong> {selectedOrder.shippingCity}
+                  <strong>{t("detail.city")}:</strong>{" "}
+                  {selectedOrder.shippingCity}
                 </p>
 
                 <p className="mb-2">
-                  <strong>Country:</strong> {selectedOrder.shippingCountry}
+                  <strong>{t("detail.country")}:</strong>{" "}
+                  {selectedOrder.shippingCountry}
                 </p>
 
                 <p className="mb-0">
-                  <strong>Postal Code:</strong>{" "}
+                  <strong>{t("detail.postalCode")}:</strong>{" "}
                   {selectedOrder.shippingPostalCode}
                 </p>
               </div>
@@ -139,52 +148,65 @@ function OrderDetailPage() {
           <div className="col-lg-4">
             <div className="card border-0 shadow-sm mb-4">
               <div className="card-body">
-                <h4 className="fw-bold mb-4">Order Summary</h4>
+                <h4 className="fw-bold mb-4">{t("detail.orderSummary")}</h4>
 
                 <div className="d-flex justify-content-between mb-3">
-                  <span className="text-muted">Order Status</span>
+                  <span className="text-muted">{t("detail.orderStatus")}</span>
+
                   <span className="badge bg-primary">
-                    {selectedOrder.orderStatus}
+                    {t(`status.${selectedOrder.orderStatus}`)}
                   </span>
                 </div>
 
                 <div className="d-flex justify-content-between mb-3">
-                  <span className="text-muted">Payment Status</span>
+                  <span className="text-muted">
+                    {t("detail.paymentStatus")}
+                  </span>
+
                   <span className="badge bg-secondary">
-                    {selectedOrder.paymentStatus}
+                    {t(`status.${selectedOrder.paymentStatus}`)}
                   </span>
                 </div>
 
                 <div className="d-flex justify-content-between mb-3">
-                  <span className="text-muted">Payment Method</span>
-                  <span>{selectedOrder.paymentMethod}</span>
+                  <span className="text-muted">
+                    {t("detail.paymentMethod")}
+                  </span>
+
+                  <span>
+                    {t(`paymentMethod.${selectedOrder.paymentMethod}`)}
+                  </span>
                 </div>
 
                 <hr />
 
                 <div className="d-flex justify-content-between mb-3">
-                  <span className="text-muted">Subtotal</span>
+                  <span className="text-muted">{t("detail.subtotal")}</span>
+
                   <span>
                     {selectedOrder.subtotal} {selectedOrder.currency}
                   </span>
                 </div>
 
                 <div className="d-flex justify-content-between mb-3">
-                  <span className="text-muted">Shipping</span>
+                  <span className="text-muted">{t("detail.shipping")}</span>
+
                   <span>
                     {selectedOrder.shippingAmount} {selectedOrder.currency}
                   </span>
                 </div>
 
                 <div className="d-flex justify-content-between mb-3">
-                  <span className="text-muted">Tax</span>
+                  <span className="text-muted">{t("detail.tax")}</span>
+
                   <span>
                     {selectedOrder.taxAmount} {selectedOrder.currency}
                   </span>
                 </div>
 
                 <div className="d-flex justify-content-between mb-3">
-                  <span className="text-muted">Discount</span>
+                  <span className="text-muted">{t("detail.discount")}</span>
+
                   <span>
                     -{selectedOrder.discountAmount} {selectedOrder.currency}
                   </span>
@@ -193,7 +215,8 @@ function OrderDetailPage() {
                 <hr />
 
                 <div className="d-flex justify-content-between">
-                  <h5 className="fw-bold">Grand Total</h5>
+                  <h5 className="fw-bold">{t("detail.grandTotal")}</h5>
+
                   <h5 className="fw-bold">
                     {selectedOrder.grandTotal} {selectedOrder.currency}
                   </h5>
@@ -204,7 +227,8 @@ function OrderDetailPage() {
             {selectedOrder.customerNote && (
               <div className="card border-0 shadow-sm">
                 <div className="card-body">
-                  <h4 className="fw-bold mb-3">Customer Note</h4>
+                  <h4 className="fw-bold mb-3">{t("detail.customerNote")}</h4>
+
                   <p className="text-muted mb-0">
                     {selectedOrder.customerNote}
                   </p>

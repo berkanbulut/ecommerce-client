@@ -2,5 +2,63 @@
   "card": {
     "addToCart": "Legg i handlekurv",
     "adding": "Legger til..."
+  },
+  "shop": {
+    "title": "Produkter",
+    "loading": "Laster produkter...",
+    "loadMore": "Last inn flere",
+    "sidebar": {
+      "categories": "Kategorier",
+      "allCategories": "Alle kategorier",
+      "brands": "Merker",
+      "allBrands": "Alle merker",
+      "priceRange": "Prisområde"
+    },
+    "search": {
+      "placeholder": "Søk etter produkter..."
+    },
+    "sort": {
+      "newest": "Nyeste",
+      "priceLowToHigh": "Pris: lav til høy",
+      "priceHighToLow": "Pris: høy til lav",
+      "nameAscending": "Navn: A - Å",
+      "nameDescending": "Navn: Å - A"
+    }
+  },
+  "detail": {
+    "loading": "Laster produkt...",
+    "notFound": "Produktet ble ikke funnet.",
+    "backToShop": "Tilbake til butikken",
+    "premiumCollection": "Premiumkolleksjon",
+    "rating": "{{rating}} / {{maxRating}}",
+    "fastDelivery": "Rask levering",
+    "deliveryTime": "2-5 virkedager",
+    "secureCheckout": "Sikker betaling",
+    "stripeProtected": "Beskyttet av Stripe",
+    "inStock": "På lager ({{count}})",
+    "outOfStock": "Ikke på lager",
+    "addToCart": "Legg i handlekurv",
+    "productImageAlt": "Produktbilde",
+    "thumbnailAlt": "Produktminiatyr"
+  },
+  "details": {
+    "description": {
+      "title": "Beskrivelse"
+    },
+    "productDetails": {
+      "title": "Produktdetaljer",
+      "shortDescription": "Kort beskrivelse",
+      "stockQuantity": "Lagerantall",
+      "stockStatus": "Lagerstatus",
+      "unknown": "Ukjent"
+    },
+    "shipping": {
+      "title": "Frakt og levering",
+      "description": "Bestillinger sendes vanligvis innen 2-5 virkedager."
+    },
+    "returns": {
+      "title": "Retur og refusjon",
+      "description": "Ubrukte produkter kan returneres innen 14 dager."
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 type CartSummaryProps = {
   subtotal: number;
@@ -13,18 +14,21 @@ function CartSummary({
   totalItems,
   onClearCart,
 }: CartSummaryProps) {
+  const { t } = useTranslation("cart");
+
   return (
     <div className="card border-0 shadow-sm">
       <div className="card-body">
-        <h4 className="fw-bold mb-4">Order Summary</h4>
+        <h4 className="fw-bold mb-4">{t("summary.title")}</h4>
 
         <div className="d-flex justify-content-between mb-3">
-          <span className="text-muted">Items</span>
+          <span className="text-muted">{t("summary.items")}</span>
           <span>{totalItems}</span>
         </div>
 
         <div className="d-flex justify-content-between mb-4">
-          <span className="text-muted">Subtotal</span>
+          <span className="text-muted">{t("summary.subtotal")}</span>
+
           <span>
             {subtotal} {currency ?? ""}
           </span>
@@ -36,15 +40,16 @@ function CartSummary({
             totalItems === 0 ? "disabled" : ""
           }`}
         >
-          Proceed to Checkout
+          {t("summary.proceedToCheckout")}
         </Link>
 
         <button
+          type="button"
           className="btn btn-outline-danger w-100"
           onClick={onClearCart}
           disabled={totalItems === 0}
         >
-          Clear Cart
+          {t("summary.clearCart")}
         </button>
       </div>
     </div>

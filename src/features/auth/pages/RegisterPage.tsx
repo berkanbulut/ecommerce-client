@@ -1,17 +1,19 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import type { AppDispatch } from "../../../app/api/store";
-import { register, resetAuthState } from "../authSlice";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
-import { useSelector } from "react-redux";
-import type { RootState } from "../../../app/api/store";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+
+import type { AppDispatch, RootState } from "../../../app/api/store";
+import { register, resetAuthState } from "../authSlice";
 
 function RegisterPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
+  const { t } = useTranslation("auth");
+
   const { error, user } = useSelector((state: RootState) => state.auth);
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,19 +29,26 @@ function RegisterPage() {
 
   useEffect(() => {
     if (user) {
-      toast.success("Register successful");
+      toast.success(t("success.register"));
+
       setUsername("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
+
       dispatch(resetAuthState());
       navigate("/login");
     }
-  }, [user, navigate, dispatch]);
+  }, [user, navigate, dispatch, t]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!isPasswordMatched) return;
+
+    if (!isPasswordMatched) {
+      toast.error(t("errors.passwordMismatch"));
+      return;
+    }
+
     dispatch(register({ username, email, password }));
   };
 
@@ -48,73 +57,73 @@ function RegisterPage() {
       className="d-flex justify-content-center align-items-center"
       style={{ minHeight: "70vh" }}
     >
-      <div className="card shadow-sm border-0 p-4" style={{ width: "400px" }}>
-        <h3 className="text-center mb-4 fw-bold">Create Account</h3>
+      <div className="card glass-card p-4" style={{ width: "400px" }}>
+        <h3 className="text-center mb-4 fw-bold">{t("register.title")}</h3>
 
         <form onSubmit={handleSubmit}>
-          {/* Name */}
           <div className="mb-3">
-            <label className="form-label">Full Name</label>
+            <label className="form-label">{t("register.nameLabel")}</label>
+
             <input
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               type="text"
               className="form-control"
-              placeholder="Enter your name"
+              placeholder={t("register.namePlaceholder")}
             />
           </div>
 
-          {/* Email */}
           <div className="mb-3">
-            <label className="form-label">Email</label>
+            <label className="form-label">{t("register.emailLabel")}</label>
+
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               className="form-control"
-              placeholder="Enter your email"
+              placeholder={t("register.emailPlaceholder")}
             />
           </div>
 
-          {/* Password */}
           <div className="mb-3">
-            <label className="form-label">Password</label>
+            <label className="form-label">{t("register.passwordLabel")}</label>
+
             <input
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
               className="form-control"
-              placeholder="Enter password"
+              placeholder={t("register.passwordPlaceholder")}
             />
           </div>
 
-          {/* Confirm Password */}
           <div className="mb-3">
-            <label className="form-label">Confirm Password</label>
+            <label className="form-label">
+              {t("register.confirmPasswordLabel")}
+            </label>
+
             <input
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               type="password"
               className="form-control"
-              placeholder="Confirm password"
+              placeholder={t("register.confirmPasswordPlaceholder")}
             />
           </div>
 
-          {/* Button */}
           <button
             disabled={!isPasswordMatched}
             type="submit"
             className="btn btn-primary w-100"
           >
-            Register
+            {t("register.submit")}
           </button>
 
-          {/* Login link */}
           <p className="text-center mt-3 mb-0">
-            Already have an account?{" "}
-            <a href="/login" className="text-decoration-none">
-              Login
-            </a>
+            {t("register.haveAccount")}{" "}
+            <Link to="/login" className="text-decoration-none">
+              {t("register.loginLink")}
+            </Link>
           </p>
         </form>
       </div>

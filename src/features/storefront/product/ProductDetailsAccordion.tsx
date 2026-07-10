@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 type ProductDetailsAccordionProps = {
   description: string;
   shortDescription: string;
@@ -11,6 +13,8 @@ function ProductDetailsAccordion({
   stockQuantity,
   stockStatus,
 }: ProductDetailsAccordionProps) {
+  const { t } = useTranslation("product");
+
   return (
     <div className="product-details-grid">
       <div className="glass-card product-detail-box">
@@ -18,7 +22,7 @@ function ProductDetailsAccordion({
           <i className="bi bi-card-text"></i>
         </div>
 
-        <h4>Description</h4>
+        <h4>{t("details.description.title")}</h4>
         <p>{description}</p>
       </div>
 
@@ -27,18 +31,21 @@ function ProductDetailsAccordion({
           <i className="bi bi-info-circle"></i>
         </div>
 
-        <h4>Product Details</h4>
+        <h4>{t("details.productDetails.title")}</h4>
 
         <p>
-          <strong>Short Description:</strong> {shortDescription}
+          <strong>{t("details.productDetails.shortDescription")}:</strong>{" "}
+          {shortDescription}
         </p>
 
         <p>
-          <strong>Stock Quantity:</strong> {stockQuantity}
+          <strong>{t("details.productDetails.stockQuantity")}:</strong>{" "}
+          {stockQuantity}
         </p>
 
         <p className="mb-0">
-          <strong>Stock Status:</strong> {stockStatus || "Unknown"}
+          <strong>{t("details.productDetails.stockStatus")}:</strong>{" "}
+          {stockStatus || t("details.productDetails.unknown")}
         </p>
       </div>
 
@@ -47,8 +54,8 @@ function ProductDetailsAccordion({
           <i className="bi bi-truck"></i>
         </div>
 
-        <h4>Shipping & Delivery</h4>
-        <p>Orders are usually shipped within 2-5 business days.</p>
+        <h4>{t("details.shipping.title")}</h4>
+        <p>{t("details.shipping.description")}</p>
       </div>
 
       <div className="glass-card product-detail-box">
@@ -56,8 +63,8 @@ function ProductDetailsAccordion({
           <i className="bi bi-arrow-repeat"></i>
         </div>
 
-        <h4>Returns & Refunds</h4>
-        <p>Products can be returned within 14 days if unused.</p>
+        <h4>{t("details.returns.title")}</h4>
+        <p>{t("details.returns.description")}</p>
       </div>
     </div>
   );

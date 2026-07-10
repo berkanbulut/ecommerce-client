@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import type { CreateOrderRequest } from "../shared/order/orderTypes";
 
 type CheckoutFormProps = {
@@ -10,16 +12,19 @@ type CheckoutFormProps = {
 };
 
 function CheckoutForm({ form, onChange }: CheckoutFormProps) {
+  const { t } = useTranslation("checkout");
+
   return (
     <div className="card border-0 shadow-sm">
       <div className="card-body">
-        <h4 className="fw-bold mb-4">Checkout Details</h4>
+        <h4 className="fw-bold mb-4">{t("form.title")}</h4>
 
-        <h6 className="fw-bold mb-3">Shipping Information</h6>
+        <h6 className="fw-bold mb-3">{t("form.shippingInformation")}</h6>
 
         <div className="row g-3 mb-4">
           <div className="col-md-6">
-            <label className="form-label">Full Name</label>
+            <label className="form-label">{t("form.fullName")}</label>
+
             <input
               type="text"
               name="shippingFullName"
@@ -31,7 +36,8 @@ function CheckoutForm({ form, onChange }: CheckoutFormProps) {
           </div>
 
           <div className="col-md-6">
-            <label className="form-label">Phone</label>
+            <label className="form-label">{t("form.phone")}</label>
+
             <input
               type="text"
               name="shippingPhone"
@@ -43,7 +49,8 @@ function CheckoutForm({ form, onChange }: CheckoutFormProps) {
           </div>
 
           <div className="col-12">
-            <label className="form-label">Address</label>
+            <label className="form-label">{t("form.address")}</label>
+
             <input
               type="text"
               name="shippingAddressLine"
@@ -55,7 +62,8 @@ function CheckoutForm({ form, onChange }: CheckoutFormProps) {
           </div>
 
           <div className="col-md-4">
-            <label className="form-label">City</label>
+            <label className="form-label">{t("form.city")}</label>
+
             <input
               type="text"
               name="shippingCity"
@@ -67,7 +75,8 @@ function CheckoutForm({ form, onChange }: CheckoutFormProps) {
           </div>
 
           <div className="col-md-4">
-            <label className="form-label">Country</label>
+            <label className="form-label">{t("form.country")}</label>
+
             <input
               type="text"
               name="shippingCountry"
@@ -79,7 +88,8 @@ function CheckoutForm({ form, onChange }: CheckoutFormProps) {
           </div>
 
           <div className="col-md-4">
-            <label className="form-label">Postal Code</label>
+            <label className="form-label">{t("form.postalCode")}</label>
+
             <input
               type="text"
               name="shippingPostalCode"
@@ -91,30 +101,34 @@ function CheckoutForm({ form, onChange }: CheckoutFormProps) {
           </div>
         </div>
 
-        <h6 className="fw-bold mb-3">Payment</h6>
+        <h6 className="fw-bold mb-3">{t("form.payment")}</h6>
 
         <div className="row g-3 mb-4">
           <div className="col-12">
-            <label className="form-label">Payment Method</label>
+            <label className="form-label">{t("form.paymentMethod")}</label>
+
             <select
               name="paymentMethod"
               className="form-select"
               value={form.paymentMethod}
               onChange={onChange}
             >
-              <option value="CASH_ON_DELIVERY">Cash on Delivery</option>
-              <option value="CARD">Credit / Debit Card</option>
+              <option value="CASH_ON_DELIVERY">
+                {t("form.cashOnDelivery")}
+              </option>
+
+              <option value="CARD">{t("form.card")}</option>
             </select>
           </div>
         </div>
 
-        <h6 className="fw-bold mb-3">Note</h6>
+        <h6 className="fw-bold mb-3">{t("form.note")}</h6>
 
         <textarea
           name="customerNote"
           className="form-control"
           rows={3}
-          placeholder="Optional note for delivery"
+          placeholder={t("form.notePlaceholder")}
           value={form.customerNote ?? ""}
           onChange={onChange}
         />

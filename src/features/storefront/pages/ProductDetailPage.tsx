@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 
 import type { AppDispatch, RootState } from "../../../app/api/store";
@@ -17,6 +18,8 @@ function ProductDetailPage() {
 
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
+
+  const { t } = useTranslation(["product", "toast", "errors"]);
 
   const { accessToken } = useSelector((state: RootState) => state.auth);
 
@@ -38,9 +41,14 @@ function ProductDetailPage() {
 
     try {
       await dispatch(handleAddItemToCart({ productId, quantity })).unwrap();
-      toast.success(`${selectedProduct?.name ?? "Product"} added to cart`);
-    } catch (error) {
-      toast.error(String(error));
+
+      toast.success(
+        t("toast:productAdded", {
+          product: selectedProduct?.name ?? "",
+        }),
+      );
+    } catch {
+      toast.error(t("errors:unexpected"));
     }
   };
 
@@ -49,7 +57,7 @@ function ProductDetailPage() {
       <section className="product-detail-section">
         <div className="container">
           <div className="glass-card p-5">
-            <p className="text-muted mb-0">Loading product...</p>
+            <p className="text-muted mb-0">{t("product:detail.loading")}</p>
           </div>
         </div>
       </section>
@@ -71,7 +79,7 @@ function ProductDetailPage() {
       <section className="product-detail-section">
         <div className="container">
           <div className="glass-card p-5">
-            <h2 className="fw-bold mb-0">Product not found.</h2>
+            <h2 className="fw-bold mb-0">{t("product:detail.notFound")}</h2>
           </div>
         </div>
       </section>
@@ -84,7 +92,7 @@ function ProductDetailPage() {
         <div className="mb-4">
           <Link to="/shop" className="product-back-link">
             <i className="bi bi-arrow-left"></i>
-            Back to Shop
+            {t("product:detail.backToShop")}
           </Link>
         </div>
 

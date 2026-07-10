@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import type { AppDispatch, RootState } from "../../../app/api/store";
 
@@ -16,6 +17,7 @@ import {
 
 function CartPage() {
   const dispatch = useDispatch<AppDispatch>();
+  const { t } = useTranslation("cart");
 
   const { accessToken } = useSelector((state: RootState) => state.auth);
 
@@ -54,7 +56,7 @@ function CartPage() {
     return (
       <section className="py-5 bg-light">
         <div className="container">
-          <p>Loading cart...</p>
+          <p>{t("page.loading")}</p>
         </div>
       </section>
     );
@@ -64,8 +66,8 @@ function CartPage() {
     <section className="py-5 bg-light">
       <div className="container">
         <div className="mb-5">
-          <h1 className="fw-bold">Shopping Cart</h1>
-          <p className="text-muted">Review your items before checkout.</p>
+          <h1 className="fw-bold">{t("page.title")}</h1>
+          <p className="text-muted">{t("page.subtitle")}</p>
         </div>
 
         {error && <div className="alert alert-danger">{error}</div>}
@@ -73,10 +75,9 @@ function CartPage() {
         {!cart || cart.items.length === 0 ? (
           <div className="card border-0 shadow-sm">
             <div className="card-body text-center py-5">
-              <h4 className="fw-bold">Your cart is empty</h4>
-              <p className="text-muted mb-4">
-                Add some products to continue shopping.
-              </p>
+              <h4 className="fw-bold">{t("page.emptyTitle")}</h4>
+
+              <p className="text-muted mb-4">{t("page.emptyDescription")}</p>
             </div>
           </div>
         ) : (

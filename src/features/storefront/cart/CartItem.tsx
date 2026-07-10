@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 type CartItemProps = {
   id: number;
   title: string;
@@ -21,6 +23,8 @@ function CartItem({
   onUpdateQuantity,
   onRemove,
 }: CartItemProps) {
+  const { t } = useTranslation("cart");
+
   const handleDecrease = () => {
     if (quantity > 1) {
       onUpdateQuantity(id, quantity - 1);
@@ -43,6 +47,7 @@ function CartItem({
 
           <div className="col-md-4">
             <h5 className="fw-bold mb-2">{title}</h5>
+
             <p className="text-muted mb-0">
               {price} {currency}
             </p>
@@ -51,9 +56,12 @@ function CartItem({
           <div className="col-md-3">
             <div className="d-flex align-items-center gap-2">
               <button
+                type="button"
                 className="btn btn-outline-dark btn-sm"
                 onClick={handleDecrease}
                 disabled={quantity <= 1}
+                aria-label={t("item.decreaseQuantity")}
+                title={t("item.decreaseQuantity")}
               >
                 -
               </button>
@@ -68,9 +76,12 @@ function CartItem({
               />
 
               <button
+                type="button"
                 className="btn btn-outline-dark btn-sm"
                 onClick={handleIncrease}
                 disabled={quantity >= availableStock}
+                aria-label={t("item.increaseQuantity")}
+                title={t("item.increaseQuantity")}
               >
                 +
               </button>
@@ -85,8 +96,11 @@ function CartItem({
 
           <div className="col-md-1 text-end">
             <button
+              type="button"
               className="btn btn-outline-danger btn-sm"
               onClick={() => onRemove(id)}
+              aria-label={t("item.remove")}
+              title={t("item.remove")}
             >
               ×
             </button>

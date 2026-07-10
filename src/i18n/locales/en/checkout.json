@@ -1,1 +1,39 @@
-{}
+{
+  "page": {
+    "title": "Checkout",
+    "subtitle": "Complete your order information below."
+  },
+  "form": {
+    "title": "Checkout Details",
+    "shippingInformation": "Shipping Information",
+    "fullName": "Full Name",
+    "phone": "Phone",
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "postalCode": "Postal Code",
+    "payment": "Payment",
+    "paymentMethod": "Payment Method",
+    "cashOnDelivery": "Cash on Delivery",
+    "card": "Credit / Debit Card",
+    "note": "Note",
+    "notePlaceholder": "Optional note for delivery"
+  },
+  "summary": {
+    "title": "Order Summary",
+    "emptyCart": "Your cart is empty.",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "placeOrder": "Place Order",
+    "placingOrder": "Placing Order..."
+  },
+  "errors": {
+    "emptyCart": "Cart is empty.",
+    "createOrderFailed": "Create order failed.",
+    "stripeSessionFailed": "Stripe payment session failed."
+  },
+  "success": {
+    "orderCreated": "Order created successfully."
+  }
+}

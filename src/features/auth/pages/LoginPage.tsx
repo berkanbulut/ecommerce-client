@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { toast } from "react-toastify";
+
 import type { AppDispatch } from "../../../app/api/store";
 import { login } from "../authSlice";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 function LoginPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
+  const { t } = useTranslation("auth");
 
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
@@ -16,7 +19,7 @@ function LoginPage() {
     e.preventDefault();
 
     if (!identifier || !password) {
-      toast.error("Please enter email/username and password");
+      toast.error(t("errors.missingCredentials"));
       return;
     }
 
@@ -29,52 +32,51 @@ function LoginPage() {
         result.authorities.includes("category:create") &&
         result.authorities.includes("category:update");
 
-      toast.success("Login success");
+      toast.success(t("success.login"));
 
-      if (isAdmin || isEditor) {
-        navigate("/admin");
-      } else {
-        navigate("/");
-      }
+      navigate(isAdmin || isEditor ? "/admin" : "/");
     } catch {
-      toast.error("Login failed");
+      toast.error(t("errors.loginFailed"));
     }
   };
 
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card shadow p-4" style={{ width: "400px" }}>
-        <h3 className="text-center mb-4">Login</h3>
+      <div className="card glass-card p-4" style={{ width: "400px" }}>
+        <h3 className="text-center mb-4">{t("login.title")}</h3>
 
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label className="form-label">Email or Username</label>
+            <label className="form-label">{t("login.identifierLabel")}</label>
+
             <input
               value={identifier}
               onChange={(e) => setIdentifier(e.target.value)}
               type="text"
               className="form-control"
-              placeholder="Enter email or username"
+              placeholder={t("login.identifierPlaceholder")}
             />
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Password</label>
+            <label className="form-label">{t("login.passwordLabel")}</label>
+
             <input
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
               className="form-control"
-              placeholder="Enter password"
+              placeholder={t("login.passwordPlaceholder")}
             />
           </div>
 
           <button type="submit" className="btn btn-primary w-100">
-            Login
+            {t("login.submit")}
           </button>
 
           <p className="text-center mt-3 mb-0">
-            Don't have an account? <Link to="/register">Register</Link>
+            {t("login.noAccount")}{" "}
+            <Link to="/register">{t("login.registerLink")}</Link>
           </p>
         </form>
       </div>

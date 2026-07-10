@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 
 import type { AppDispatch, RootState } from "../../../app/api/store";
@@ -17,6 +18,7 @@ import { handleCreateStripeCheckoutSession } from "../shared/payment/paymentSlic
 function CheckoutPage() {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
+  const { t } = useTranslation("checkout");
 
   const { accessToken, username } = useSelector(
     (state: RootState) => state.auth,
@@ -70,14 +72,14 @@ function CheckoutPage() {
 
   const handlePlaceOrder = async () => {
     if (!cart || cart.items.length === 0) {
-      toast.error("Cart is empty");
+      toast.error(t("errors.emptyCart"));
       return;
     }
 
     const orderResult = await dispatch(handleCreateOrder(form));
 
     if (!handleCreateOrder.fulfilled.match(orderResult)) {
-      toast.error("Create order failed");
+      toast.error(t("errors.createOrderFailed"));
       return;
     }
 
@@ -95,11 +97,11 @@ function CheckoutPage() {
         return;
       }
 
-      toast.error("Stripe payment session failed");
+      toast.error(t("errors.stripeSessionFailed"));
       return;
     }
 
-    toast.success("Order created successfully");
+    toast.success(t("success.orderCreated"));
     navigate("/orders");
   };
 
@@ -107,8 +109,9 @@ function CheckoutPage() {
     <section className="py-5 bg-light">
       <div className="container">
         <div className="mb-5">
-          <h1 className="fw-bold">Checkout</h1>
-          <p className="text-muted">Complete your order information below.</p>
+          <h1 className="fw-bold">{t("page.title")}</h1>
+
+          <p className="text-muted">{t("page.subtitle")}</p>
         </div>
 
         <div className="row g-4">

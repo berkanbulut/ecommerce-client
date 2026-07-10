@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import type { AppDispatch, RootState } from "../../../app/api/store";
 import { handleGetCategoriesShop } from "../shared/category/categoryStoreFrontSlice";
@@ -23,6 +24,7 @@ function ShopSidebar({
   onMaxPriceChange,
 }: ShopSidebarProps) {
   const dispatch = useDispatch<AppDispatch>();
+  const { t } = useTranslation("product");
 
   const { shopCategories } = useSelector(
     (state: RootState) => state.storefrontCategory,
@@ -41,7 +43,8 @@ function ShopSidebar({
     <aside className="shop-sidebar glass-card p-4">
       <div className="shop-filter-section">
         <div className="d-flex align-items-center justify-content-between mb-3">
-          <h5 className="fw-bold mb-0">Categories</h5>
+          <h5 className="fw-bold mb-0">{t("shop.sidebar.categories")}</h5>
+
           <i className="bi bi-grid text-muted"></i>
         </div>
 
@@ -56,7 +59,7 @@ function ShopSidebar({
           />
 
           <label className="form-check-label" htmlFor="category-all">
-            All Categories
+            {t("shop.sidebar.allCategories")}
           </label>
         </div>
 
@@ -85,7 +88,8 @@ function ShopSidebar({
 
       <div className="shop-filter-section">
         <div className="d-flex align-items-center justify-content-between mb-3">
-          <h5 className="fw-bold mb-0">Brands</h5>
+          <h5 className="fw-bold mb-0">{t("shop.sidebar.brands")}</h5>
+
           <i className="bi bi-tags text-muted"></i>
         </div>
 
@@ -100,7 +104,7 @@ function ShopSidebar({
           />
 
           <label className="form-check-label" htmlFor="brand-all">
-            All Brands
+            {t("shop.sidebar.allBrands")}
           </label>
         </div>
 
@@ -126,7 +130,8 @@ function ShopSidebar({
 
       <div className="shop-filter-section">
         <div className="d-flex align-items-center justify-content-between mb-3">
-          <h5 className="fw-bold mb-0">Price Range</h5>
+          <h5 className="fw-bold mb-0">{t("shop.sidebar.priceRange")}</h5>
+
           <i className="bi bi-currency-dollar text-muted"></i>
         </div>
 

@@ -1,1 +1,56 @@
-{}
+{
+  "list": {
+    "title": "Mine bestillinger",
+    "subtitle": "Se alle bestillingene du har lagt inn.",
+    "loading": "Laster bestillinger...",
+    "emptyTitle": "Ingen bestillinger funnet",
+    "emptyDescription": "Du har ikke lagt inn noen bestillinger ennå.",
+    "orderNumber": "Ordrenummer",
+    "total": "Totalt",
+    "orderStatus": "Ordrestatus",
+    "payment": "Betaling",
+    "date": "Dato",
+    "viewDetails": "Vis detaljer"
+  },
+  "detail": {
+    "loading": "Laster bestilling...",
+    "notFound": "Bestillingen ble ikke funnet.",
+    "title": "Ordredetaljer",
+    "orderNumber": "Ordrenummer",
+    "backToOrders": "Tilbake til bestillinger",
+    "items": "Varer",
+    "quantity": "Antall",
+    "shippingAddress": "Leveringsadresse",
+    "name": "Navn",
+    "phone": "Telefon",
+    "address": "Adresse",
+    "city": "By",
+    "country": "Land",
+    "postalCode": "Postnummer",
+    "orderSummary": "Ordresammendrag",
+    "orderStatus": "Ordrestatus",
+    "paymentStatus": "Betalingsstatus",
+    "paymentMethod": "Betalingsmåte",
+    "subtotal": "Delsum",
+    "shipping": "Frakt",
+    "tax": "Avgift",
+    "discount": "Rabatt",
+    "grandTotal": "Totalt",
+    "customerNote": "Kundemerknad"
+  },
+  "status": {
+    "PENDING": "Venter",
+    "CONFIRMED": "Bekreftet",
+    "PROCESSING": "Behandles",
+    "SHIPPED": "Sendt",
+    "DELIVERED": "Levert",
+    "CANCELLED": "Kansellert",
+    "PAID": "Betalt",
+    "FAILED": "Mislyktes",
+    "REFUNDED": "Refundert"
+  },
+  "paymentMethod": {
+    "CASH_ON_DELIVERY": "Betaling ved levering",
+    "CARD": "Kreditt- / debetkort"
+  }
+}

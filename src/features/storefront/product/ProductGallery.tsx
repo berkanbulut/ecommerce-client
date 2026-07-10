@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import { getImageUrl } from "../../../utils/imageHelper";
 
 type ProductImage = {
@@ -13,6 +15,8 @@ type ProductGalleryProps = {
 };
 
 function ProductGallery({ mainImageUrl, images }: ProductGalleryProps) {
+  const { t } = useTranslation("product");
+
   const [selectedImage, setSelectedImage] = useState(mainImageUrl);
 
   useEffect(() => {
@@ -32,7 +36,7 @@ function ProductGallery({ mainImageUrl, images }: ProductGalleryProps) {
       <div className="product-main-image-card">
         <img
           src={getImageUrl(selectedImage)}
-          alt="Product"
+          alt={t("detail.productImageAlt")}
           className="product-main-image"
         />
       </div>
@@ -47,7 +51,10 @@ function ProductGallery({ mainImageUrl, images }: ProductGalleryProps) {
             }`}
             onClick={() => setSelectedImage(image.imageUrl)}
           >
-            <img src={getImageUrl(image.imageUrl)} alt="Thumbnail" />
+            <img
+              src={getImageUrl(image.imageUrl)}
+              alt={t("detail.thumbnailAlt")}
+            />
           </button>
         ))}
       </div>

@@ -41,3 +41,33 @@ textarea:focus {
 .form-range::-moz-range-thumb {
   background: var(--app-primary);
 }
+
+.form-select {
+  background-color: var(--app-input) !important;
+  color: var(--app-text) !important;
+  border: 1px solid var(--app-border) !important;
+}
+
+.form-select option {
+  background-color: var(--app-surface-solid);
+  color: var(--app-text);
+}
+
+[data-theme="dark"] .form-select {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+[data-theme="dark"] .form-select option {
+  background-color: #111827;
+  color: #f8fafc;
+}
+
+.shop-search-input {
+  min-width: 250px;
+}
+
+.shop-sort-select {
+  min-width: 220px;
+}

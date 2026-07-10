@@ -1,1 +1,56 @@
-{}
+{
+  "list": {
+    "title": "My Orders",
+    "subtitle": "View all orders you have placed.",
+    "loading": "Loading orders...",
+    "emptyTitle": "No orders found",
+    "emptyDescription": "You haven't placed any orders yet.",
+    "orderNumber": "Order No",
+    "total": "Total",
+    "orderStatus": "Order Status",
+    "payment": "Payment",
+    "date": "Date",
+    "viewDetails": "View Details"
+  },
+  "detail": {
+    "loading": "Loading order...",
+    "notFound": "Order not found.",
+    "title": "Order Details",
+    "orderNumber": "Order No",
+    "backToOrders": "Back to Orders",
+    "items": "Items",
+    "quantity": "Quantity",
+    "shippingAddress": "Shipping Address",
+    "name": "Name",
+    "phone": "Phone",
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "postalCode": "Postal Code",
+    "orderSummary": "Order Summary",
+    "orderStatus": "Order Status",
+    "paymentStatus": "Payment Status",
+    "paymentMethod": "Payment Method",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "tax": "Tax",
+    "discount": "Discount",
+    "grandTotal": "Grand Total",
+    "customerNote": "Customer Note"
+  },
+  "status": {
+    "PENDING": "Pending",
+    "CONFIRMED": "Confirmed",
+    "PROCESSING": "Processing",
+    "SHIPPED": "Shipped",
+    "DELIVERED": "Delivered",
+    "CANCELLED": "Cancelled",
+    "PAID": "Paid",
+    "FAILED": "Failed",
+    "REFUNDED": "Refunded"
+  },
+  "paymentMethod": {
+    "CASH_ON_DELIVERY": "Cash on Delivery",
+    "CARD": "Credit / Debit Card"
+  }
+}

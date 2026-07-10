@@ -2,5 +2,63 @@
   "card": {
     "addToCart": "Add to Cart",
     "adding": "Adding..."
+  },
+  "shop": {
+    "title": "Shop Products",
+    "loading": "Loading products...",
+    "loadMore": "Load More",
+    "sidebar": {
+      "categories": "Categories",
+      "allCategories": "All Categories",
+      "brands": "Brands",
+      "allBrands": "All Brands",
+      "priceRange": "Price Range"
+    },
+    "search": {
+      "placeholder": "Search products..."
+    },
+    "sort": {
+      "newest": "Newest",
+      "priceLowToHigh": "Price: Low to High",
+      "priceHighToLow": "Price: High to Low",
+      "nameAscending": "Name: A - Z",
+      "nameDescending": "Name: Z - A"
+    }
+  },
+  "detail": {
+    "loading": "Loading product...",
+    "notFound": "Product not found.",
+    "backToShop": "Back to Shop",
+    "premiumCollection": "Premium Collection",
+    "rating": "{{rating}} / {{maxRating}}",
+    "fastDelivery": "Fast Delivery",
+    "deliveryTime": "2-5 business days",
+    "secureCheckout": "Secure Checkout",
+    "stripeProtected": "Stripe protected",
+    "inStock": "In Stock ({{count}})",
+    "outOfStock": "Out of Stock",
+    "addToCart": "Add to Cart",
+    "productImageAlt": "Product image",
+    "thumbnailAlt": "Product thumbnail"
+  },
+  "details": {
+    "description": {
+      "title": "Description"
+    },
+    "productDetails": {
+      "title": "Product Details",
+      "shortDescription": "Short Description",
+      "stockQuantity": "Stock Quantity",
+      "stockStatus": "Stock Status",
+      "unknown": "Unknown"
+    },
+    "shipping": {
+      "title": "Shipping & Delivery",
+      "description": "Orders are usually shipped within 2-5 business days."
+    },
+    "returns": {
+      "title": "Returns & Refunds",
+      "description": "Products can be returned within 14 days if unused."
+    }
   }
 }

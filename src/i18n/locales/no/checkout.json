@@ -1,1 +1,39 @@
-{}
+{
+  "page": {
+    "title": "Kasse",
+    "subtitle": "Fyll ut bestillingsinformasjonen nedenfor."
+  },
+  "form": {
+    "title": "Bestillingsdetaljer",
+    "shippingInformation": "Leveringsinformasjon",
+    "fullName": "Fullt navn",
+    "phone": "Telefon",
+    "address": "Adresse",
+    "city": "By",
+    "country": "Land",
+    "postalCode": "Postnummer",
+    "payment": "Betaling",
+    "paymentMethod": "Betalingsmåte",
+    "cashOnDelivery": "Betaling ved levering",
+    "card": "Kreditt- / debetkort",
+    "note": "Merknad",
+    "notePlaceholder": "Valgfri merknad for levering"
+  },
+  "summary": {
+    "title": "Ordresammendrag",
+    "emptyCart": "Handlekurven din er tom.",
+    "subtotal": "Delsum",
+    "shipping": "Frakt",
+    "total": "Totalt",
+    "placeOrder": "Fullfør bestilling",
+    "placingOrder": "Oppretter bestilling..."
+  },
+  "errors": {
+    "emptyCart": "Handlekurven er tom.",
+    "createOrderFailed": "Kunne ikke opprette bestillingen.",
+    "stripeSessionFailed": "Kunne ikke starte Stripe-betalingen."
+  },
+  "success": {
+    "orderCreated": "Bestillingen ble opprettet."
+  }
+}

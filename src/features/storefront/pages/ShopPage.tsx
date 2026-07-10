@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import type { AppDispatch, RootState } from "../../../app/api/store";
 import { fetchShopProducts } from "../shared/product/productSlice";
@@ -15,6 +16,7 @@ const PRODUCTS_PER_LOAD = 12;
 function ShopPage() {
   const dispatch = useDispatch<AppDispatch>();
   const [searchParams, setSearchParams] = useSearchParams();
+  const { t } = useTranslation("product");
 
   const { shopProducts, isLoading, error } = useSelector(
     (state: RootState) => state.productReducerStoreFront,
@@ -125,7 +127,7 @@ function ShopPage() {
             />
 
             {isLoading && (
-              <div className="text-center py-5">Loading products...</div>
+              <div className="text-center py-5">{t("shop.loading")}</div>
             )}
 
             {error && <div className="alert alert-danger">{error}</div>}
@@ -142,7 +144,7 @@ function ShopPage() {
                         setVisibleCount((prev) => prev + PRODUCTS_PER_LOAD)
                       }
                     >
-                      Load More
+                      {t("shop.loadMore")}
                     </button>
                   </div>
                 )}

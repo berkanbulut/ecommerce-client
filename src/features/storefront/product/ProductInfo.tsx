@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type ProductInfoProps = {
   productId: number;
@@ -19,6 +20,8 @@ function ProductInfo({
   stockStatus,
   onAddToCart,
 }: ProductInfoProps) {
+  const { t } = useTranslation("product");
+
   const isInStock = stockQuantity > 0 && stockStatus !== "OUT_OF_STOCK";
 
   const [quantity, setQuantity] = useState(1);
@@ -51,7 +54,7 @@ function ProductInfo({
 
   return (
     <div className="product-info glass-card">
-      <span className="product-eyebrow">Premium Collection</span>
+      <span className="product-eyebrow">{t("detail.premiumCollection")}</span>
 
       <h1 className="product-title">{title}</h1>
 
@@ -64,7 +67,12 @@ function ProductInfo({
           <i className="bi bi-star-half"></i>
         </div>
 
-        <span className="text-muted small">4.8 / 5.0</span>
+        <span className="text-muted small">
+          {t("detail.rating", {
+            rating: "4.8",
+            maxRating: "5.0",
+          })}
+        </span>
       </div>
 
       <h2 className="product-price">${price}</h2>
@@ -74,17 +82,19 @@ function ProductInfo({
       <div className="product-meta-grid">
         <div className="product-meta-card">
           <i className="bi bi-truck"></i>
+
           <div>
-            <strong>Fast Delivery</strong>
-            <span>2-5 business days</span>
+            <strong>{t("detail.fastDelivery")}</strong>
+            <span>{t("detail.deliveryTime")}</span>
           </div>
         </div>
 
         <div className="product-meta-card">
           <i className="bi bi-shield-check"></i>
+
           <div>
-            <strong>Secure Checkout</strong>
-            <span>Stripe protected</span>
+            <strong>{t("detail.secureCheckout")}</strong>
+            <span>{t("detail.stripeProtected")}</span>
           </div>
         </div>
       </div>
@@ -92,10 +102,12 @@ function ProductInfo({
       <div className="product-stock-row">
         {isInStock ? (
           <span className="badge badge-delivered">
-            In Stock ({stockQuantity})
+            {t("detail.inStock", { count: stockQuantity })}
           </span>
         ) : (
-          <span className="badge badge-cancelled">Out of Stock</span>
+          <span className="badge badge-cancelled">
+            {t("detail.outOfStock")}
+          </span>
         )}
       </div>
 
@@ -105,6 +117,7 @@ function ProductInfo({
             type="button"
             onClick={decreaseQuantity}
             disabled={!isInStock}
+            aria-label="Decrease quantity"
           >
             -
           </button>
@@ -122,6 +135,7 @@ function ProductInfo({
             type="button"
             onClick={increaseQuantity}
             disabled={!isInStock}
+            aria-label="Increase quantity"
           >
             +
           </button>
@@ -133,7 +147,7 @@ function ProductInfo({
           onClick={handleAddToCart}
         >
           <i className="bi bi-cart-plus me-2"></i>
-          Add to Cart
+          {t("detail.addToCart")}
         </button>
       </div>
     </div>

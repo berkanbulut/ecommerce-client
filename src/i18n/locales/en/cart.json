@@ -1,1 +1,21 @@
-{}
+{
+  "page": {
+    "title": "Shopping Cart",
+    "subtitle": "Review your items before checkout.",
+    "loading": "Loading cart...",
+    "emptyTitle": "Your cart is empty",
+    "emptyDescription": "Add some products to continue shopping."
+  },
+  "item": {
+    "decreaseQuantity": "Decrease quantity",
+    "increaseQuantity": "Increase quantity",
+    "remove": "Remove item"
+  },
+  "summary": {
+    "title": "Order Summary",
+    "items": "Items",
+    "subtotal": "Subtotal",
+    "proceedToCheckout": "Proceed to Checkout",
+    "clearCart": "Clear Cart"
+  }
+}

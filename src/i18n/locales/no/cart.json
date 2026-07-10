@@ -1,1 +1,21 @@
-{}
+{
+  "page": {
+    "title": "Handlekurv",
+    "subtitle": "Se gjennom varene før du går til kassen.",
+    "loading": "Laster handlekurven...",
+    "emptyTitle": "Handlekurven din er tom",
+    "emptyDescription": "Legg til noen produkter for å fortsette å handle."
+  },
+  "item": {
+    "decreaseQuantity": "Reduser antall",
+    "increaseQuantity": "Øk antall",
+    "remove": "Fjern vare"
+  },
+  "summary": {
+    "title": "Ordresammendrag",
+    "items": "Varer",
+    "subtotal": "Delsum",
+    "proceedToCheckout": "Gå til kassen",
+    "clearCart": "Tøm handlekurven"
+  }
+}
