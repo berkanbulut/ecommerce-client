@@ -6,15 +6,28 @@ import type {
   UpdateCartItemRequest,
 } from "./cartTypes";
 
+// interface CartState {
+//   cart: Cart | null;
+//   isLoading: boolean;
+//   error: string | null;
+// }
 interface CartState {
   cart: Cart | null;
   isLoading: boolean;
+  addingProductId: number | null;
   error: string | null;
 }
+
+// const initialState: CartState = {
+//   cart: null,
+//   isLoading: false,
+//   error: null,
+// };
 
 const initialState: CartState = {
   cart: null,
   isLoading: false,
+  addingProductId: null,
   error: null,
 };
 
@@ -112,17 +125,19 @@ const cartSlice = createSlice({
       })
 
       // ADD ITEM
-      .addCase(handleAddItemToCart.pending, (state) => {
-        state.isLoading = true;
+      .addCase(handleAddItemToCart.pending, (state, action) => {
+        state.addingProductId = action.meta.arg.productId;
         state.error = null;
       })
-      .addCase(handleAddItemToCart.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload as string;
-      })
+
       .addCase(handleAddItemToCart.fulfilled, (state, action) => {
-        state.isLoading = false;
         state.cart = action.payload;
+        state.addingProductId = null;
+      })
+
+      .addCase(handleAddItemToCart.rejected, (state, action) => {
+        state.addingProductId = null;
+        state.error = action.payload as string;
       })
 
       // UPDATE ITEM

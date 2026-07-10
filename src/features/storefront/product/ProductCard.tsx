@@ -18,9 +18,11 @@ function ProductCard({ id, title, slug, price, image }: ProductCardProps) {
   const navigate = useNavigate();
   const { t } = useTranslation("product");
   const { accessToken } = useSelector((state: RootState) => state.auth);
-  const { isLoading } = useSelector(
+  const { addingProductId } = useSelector(
     (state: RootState) => state.cartSliceReducer,
   );
+
+  const isAdding = addingProductId === id;
 
   const handleAddToCart = async () => {
     if (!accessToken) {
@@ -63,9 +65,9 @@ function ProductCard({ id, title, slug, price, image }: ProductCardProps) {
           <button
             className="btn btn-dark w-100"
             onClick={handleAddToCart}
-            disabled={isLoading}
+            disabled={isAdding}
           >
-            {isLoading ? t("card.adding") : t("card.addToCart")}
+            {isAdding ? t("card.adding") : t("card.addToCart")}
           </button>
         </div>
       </div>
