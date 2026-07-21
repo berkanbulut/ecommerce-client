@@ -12,6 +12,7 @@ interface AuthState {
   accessToken: string | null;
   username: string | null;
   isLoading: boolean;
+  isInitialized: boolean;
   error: string | null;
 }
 
@@ -22,6 +23,7 @@ const initialState: AuthState = {
   accessToken: null,
   username: null,
   isLoading: false,
+  isInitialized: false,
   error: null,
 };
 
@@ -154,18 +156,25 @@ const authSlice = createSlice({
       //fulfilled
 
       .addCase(refresh.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isInitialized = true;
         state.accessToken = action.payload.accessToken;
         state.username = action.payload.username;
         state.authorities = action.payload.authorities;
       })
       //rejected
       .addCase(refresh.rejected, (state) => {
+        state.isLoading = false;
+        state.isInitialized = true;
         state.accessToken = null;
         state.username = null;
         state.authorities = [];
       })
 
       //pending
+      .addCase(refresh.pending, (state) => {
+        state.isLoading = true;
+      })
 
       //LOGOUT
       .addCase(logout.fulfilled, (state) => {
