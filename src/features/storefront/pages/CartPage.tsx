@@ -19,7 +19,9 @@ function CartPage() {
   const dispatch = useDispatch<AppDispatch>();
   const { t } = useTranslation("cart");
 
-  const { accessToken } = useSelector((state: RootState) => state.auth);
+  const { accessToken, isInitialized } = useSelector(
+    (state: RootState) => state.auth,
+  );
 
   const { cart, isLoading, error } = useSelector(
     (state: RootState) => state.cartSliceReducer,
@@ -31,6 +33,9 @@ function CartPage() {
     }
   }, [dispatch, accessToken]);
 
+  if (!isInitialized) {
+    return null;
+  }
   if (!accessToken) {
     return <Navigate to="/login" replace />;
   }
