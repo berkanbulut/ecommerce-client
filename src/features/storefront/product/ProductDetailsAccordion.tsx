@@ -43,10 +43,18 @@ function ProductDetailsAccordion({
           {stockQuantity}
         </p>
 
-        <p className="mb-0">
-          <strong>{t("details.productDetails.stockStatus")}:</strong>{" "}
-          {stockStatus || t("details.productDetails.unknown")}
-        </p>
+        {stockStatus === "IN_STOCK" ? (
+          <p className="mb-0">
+            <strong>{t("details.productDetails.stockStatus")}:</strong> In stock
+            {/* {stockStatus || t("details.productDetails.unknown")} */}
+          </p>
+        ) : (
+          <p className="mb-0">
+            <strong>{t("details.productDetails.stockStatus")}:</strong> Out of
+            stock
+            {/* {stockStatus || t("details.productDetails.unknown")} */}
+          </p>
+        )}
       </div>
 
       <div className="glass-card product-detail-box">

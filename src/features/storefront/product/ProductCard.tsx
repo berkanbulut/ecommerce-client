@@ -10,10 +10,18 @@ type ProductCardProps = {
   slug: string;
   title: string;
   price: number;
+  salePrice: number;
   image: string;
 };
 
-function ProductCard({ id, title, slug, price, image }: ProductCardProps) {
+function ProductCard({
+  id,
+  title,
+  slug,
+  price,
+  salePrice,
+  image,
+}: ProductCardProps) {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const { t } = useTranslation("product");

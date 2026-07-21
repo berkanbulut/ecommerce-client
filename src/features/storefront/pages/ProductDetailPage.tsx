@@ -85,7 +85,7 @@ function ProductDetailPage() {
       </section>
     );
   }
-
+  console.log("selectedProduct:", selectedProduct);
   return (
     <section className="product-detail-section">
       <div className="container">
@@ -106,6 +106,7 @@ function ProductDetailPage() {
             productId={selectedProduct.id}
             title={selectedProduct.name}
             price={selectedProduct.price}
+            salePrice={selectedProduct.salePrice}
             description={selectedProduct.description}
             stockQuantity={selectedProduct.stockQuantity}
             stockStatus={selectedProduct.stockStatus}

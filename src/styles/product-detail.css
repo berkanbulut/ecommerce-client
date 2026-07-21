@@ -262,3 +262,39 @@
   color: var(--app-muted);
   margin-bottom: 0.65rem;
 }
+
+.product-price-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-old-price {
+  text-decoration: line-through;
+  color: #9ca3af;
+  font-size: 1.2rem;
+}
+
+.product-price {
+  margin: 0;
+  color: #fff;
+  font-weight: 700;
+}
+.sale-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  background: linear-gradient(135deg, #fde047, #f59e0b);
+  color: #111827;
+
+  padding: 6px 14px;
+  border-radius: 999px;
+
+  font-weight: 800;
+  font-size: 12px;
+
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+
+  z-index: 2;
+}

@@ -5,6 +5,7 @@ type ProductInfoProps = {
   productId: number;
   title: string;
   price: number;
+  salePrice: number;
   description: string;
   stockQuantity: number;
   stockStatus?: string;
@@ -15,6 +16,7 @@ function ProductInfo({
   productId,
   title,
   price,
+  salePrice,
   description,
   stockQuantity,
   stockStatus,
@@ -75,7 +77,14 @@ function ProductInfo({
         </span>
       </div>
 
-      <h2 className="product-price">${price}</h2>
+      {price !== salePrice ? (
+        <div className="product-price-wrapper">
+          <span className="product-old-price">${price}</span>
+          <h2 className="product-price">${salePrice}</h2>
+        </div>
+      ) : (
+        <h2 className="product-price">${price}</h2>
+      )}
 
       <p className="product-description">{description}</p>
 
