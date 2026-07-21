@@ -10,7 +10,7 @@ type ProductCardProps = {
   slug: string;
   title: string;
   price: number;
-  salePrice: number;
+
   image: string;
 };
 
@@ -19,7 +19,7 @@ function ProductCard({
   title,
   slug,
   price,
-  salePrice,
+
   image,
 }: ProductCardProps) {
   const dispatch = useDispatch<AppDispatch>();

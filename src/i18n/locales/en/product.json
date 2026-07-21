@@ -20,9 +20,7 @@
     "sort": {
       "newest": "Newest",
       "priceLowToHigh": "Price: Low to High",
-      "priceHighToLow": "Price: High to Low",
-      "nameAscending": "Name: A - Z",
-      "nameDescending": "Name: Z - A"
+      "priceHighToLow": "Price: High to Low"
     }
   },
   "detail": {

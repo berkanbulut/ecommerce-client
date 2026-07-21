@@ -38,8 +38,6 @@ function SortBar({
           <option value="newest">{t("shop.sort.newest")}</option>
           <option value="price_asc">{t("shop.sort.priceLowToHigh")}</option>
           <option value="price_desc">{t("shop.sort.priceHighToLow")}</option>
-          <option value="name_asc">{t("shop.sort.nameAscending")}</option>
-          <option value="name_desc">{t("shop.sort.nameDescending")}</option>
         </select>
       </div>
     </div>
