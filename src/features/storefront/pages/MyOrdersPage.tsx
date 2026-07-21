@@ -10,9 +10,7 @@ function MyOrdersPage() {
   const dispatch = useDispatch<AppDispatch>();
   const { t, i18n } = useTranslation("orders");
 
-  const { accessToken, isInitialized } = useSelector(
-    (state: RootState) => state.auth,
-  );
+  const { accessToken } = useSelector((state: RootState) => state.auth);
 
   const { orders, isLoading, error } = useSelector(
     (state: RootState) => state.orderReducerStoreFront,
@@ -24,9 +22,6 @@ function MyOrdersPage() {
     }
   }, [dispatch, accessToken]);
 
-  if (!isInitialized) {
-    return null;
-  }
   if (!accessToken) {
     return <Navigate to="/login" replace />;
   }

@@ -20,7 +20,7 @@ function CheckoutPage() {
   const navigate = useNavigate();
   const { t } = useTranslation("checkout");
 
-  const { accessToken, username, isInitialized } = useSelector(
+  const { accessToken, username } = useSelector(
     (state: RootState) => state.auth,
   );
 
@@ -53,9 +53,6 @@ function CheckoutPage() {
     }
   }, [dispatch, accessToken]);
 
-  if (!isInitialized) {
-    return null;
-  }
   if (!accessToken) {
     return <Navigate to="/login" replace />;
   }
