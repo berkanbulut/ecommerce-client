@@ -106,8 +106,36 @@ function ShopPage() {
   return (
     <section className="py-5 bg-light">
       <div className="container">
+        {/* MOBILE FILTER BUTTON */}
+        <div className="d-lg-none mb-4">
+          <button
+            className="btn btn-outline-dark w-100 shop-filter-toggle"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#shopFilters"
+            aria-expanded="false"
+            aria-controls="shopFilters"
+          >
+            <i className="bi bi-sliders me-2"></i>
+            {t("shop.filters")}
+          </button>
+        </div>
+
+        {/* MOBILE FILTER COLLAPSE */}
+        <div className="collapse d-lg-none mb-4" id="shopFilters">
+          <ShopSidebar
+            selectedCategoryId={selectedCategoryId}
+            selectedBrandId={selectedBrandId}
+            maxPrice={maxPrice}
+            onCategorySelect={handleCategorySelect}
+            onBrandSelect={handleBrandSelect}
+            onMaxPriceChange={handleMaxPriceChange}
+          />
+        </div>
+
         <div className="row g-4">
-          <div className="col-lg-3">
+          {/* DESKTOP SIDEBAR */}
+          <div className="col-lg-3 d-none d-lg-block">
             <ShopSidebar
               selectedCategoryId={selectedCategoryId}
               selectedBrandId={selectedBrandId}
@@ -118,6 +146,7 @@ function ShopPage() {
             />
           </div>
 
+          {/* PRODUCTS */}
           <div className="col-lg-9">
             <SortBar
               searchTerm={searchTerm}
@@ -139,6 +168,7 @@ function ShopPage() {
                 {hasMoreProducts && (
                   <div className="text-center mt-5">
                     <button
+                      type="button"
                       className="btn btn-outline-dark px-4"
                       onClick={() =>
                         setVisibleCount((prev) => prev + PRODUCTS_PER_LOAD)

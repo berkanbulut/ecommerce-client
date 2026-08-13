@@ -16,6 +16,7 @@
 
 @import "./scrollbar.css";
 @import "./utilities.css";
-@import "./responsive.css";
+
 @import "./hero.css";
 @import "./product-detail.css";
+@import "./responsive.css";

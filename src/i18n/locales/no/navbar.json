@@ -10,5 +10,7 @@
   "language": "Språk",
   "toggleTheme": "Bytt tema",
   "footerDescription": "Moderne handleopplevelse for alle.",
-  "allRightsReserved": "Alle rettigheter reservert."
+  "allRightsReserved": "Alle rettigheter reservert.",
+  "signedInAs": "Logget inn som",
+  "cart": "Handlekurv"
 }

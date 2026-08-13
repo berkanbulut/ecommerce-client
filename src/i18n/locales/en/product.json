@@ -5,6 +5,7 @@
   },
   "shop": {
     "title": "Shop Products",
+    "filters": "Filters",
     "loading": "Loading products...",
     "loadMore": "Load More",
     "sidebar": {

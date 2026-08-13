@@ -140,6 +140,7 @@ function StoreFrontLayout() {
               className="app-icon-button dropdown-toggle"
               type="button"
               data-bs-toggle="dropdown"
+              aria-expanded="false"
               title={t("language")}
             >
               {currentLanguage.flag}
@@ -161,7 +162,11 @@ function StoreFrontLayout() {
             </ul>
           </div>
 
-          <NavLink to="/cart" className="app-icon-button position-relative">
+          <NavLink
+            to="/cart"
+            className="app-icon-button position-relative"
+            title={t("cart")}
+          >
             <i className="bi bi-cart3"></i>
 
             {cartCount > 0 && (
@@ -170,21 +175,63 @@ function StoreFrontLayout() {
           </NavLink>
 
           {isAuthenticated ? (
-            <div className="app-user-chip">
-              <span className="app-user-avatar">
-                {username?.charAt(0).toUpperCase() ?? "U"}
-              </span>
+            <>
+              {/* DESKTOP USER */}
+              <div className="app-user-chip app-user-desktop">
+                <span className="app-user-avatar">
+                  {username?.charAt(0).toUpperCase() ?? "U"}
+                </span>
 
-              <span className="app-user-name">{username}</span>
+                <span className="app-user-name">{username}</span>
 
-              <button
-                type="button"
-                className="app-logout-button"
-                onClick={handleLogout}
-              >
-                {t("logout")}
-              </button>
-            </div>
+                <button
+                  type="button"
+                  className="app-logout-button"
+                  onClick={handleLogout}
+                >
+                  {t("logout")}
+                </button>
+              </div>
+
+              {/* MOBILE USER */}
+              <div className="dropdown app-user-mobile">
+                <button
+                  type="button"
+                  className="app-user-menu-button dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span className="app-user-avatar">
+                    {username?.charAt(0).toUpperCase() ?? "U"}
+                  </span>
+                </button>
+
+                <ul className="dropdown-menu dropdown-menu-end glass-card app-user-dropdown">
+                  <li className="px-3 py-2">
+                    <div className="small text-muted">{t("signedInAs")}</div>
+
+                    <div className="fw-semibold app-user-dropdown-name">
+                      {username}
+                    </div>
+                  </li>
+
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+
+                  <li>
+                    <button
+                      type="button"
+                      className="dropdown-item"
+                      onClick={handleLogout}
+                    >
+                      <i className="bi bi-box-arrow-right me-2"></i>
+                      {t("logout")}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </>
           ) : (
             <div className="app-auth-actions">
               <NavLink to="/login" className="app-nav-link">
@@ -208,6 +255,7 @@ function StoreFrontLayout() {
           <div className="row align-items-center">
             <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
               <h5 className="fw-bold mb-1">MyStore</h5>
+
               <p className="text-muted mb-0">{t("footerDescription")}</p>
             </div>
 

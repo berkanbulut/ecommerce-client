@@ -221,3 +221,51 @@
 [data-theme="dark"] .dropdown-item:focus {
   background: rgba(96, 165, 250, 0.22) !important;
 }
+
+.app-user-menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.app-user-menu-button::after {
+  display: none;
+}
+
+.app-user-dropdown {
+  min-width: 190px;
+}
+
+.app-user-dropdown-name {
+  max-width: 160px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* DESKTOP */
+.app-user-desktop {
+  display: flex;
+}
+
+.app-user-mobile {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .app-user-desktop {
+    display: none !important;
+  }
+
+  .app-user-mobile {
+    display: block;
+  }
+}

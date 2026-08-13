@@ -10,5 +10,7 @@
   "language": "Language",
   "toggleTheme": "Toggle theme",
   "footerDescription": "Modern shopping experience for everyone.",
-  "allRightsReserved": "All rights reserved."
+  "allRightsReserved": "All rights reserved.",
+  "signedInAs": "Signed in as",
+  "cart": "Cart"
 }
